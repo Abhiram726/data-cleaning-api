@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DataCleanerApplication<datacleaner>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.abhiram.datacleaner.application.DataCleanerApplication",
+            "projectName": "datacleaner",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
