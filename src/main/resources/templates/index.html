@@ -1,55 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataCleaner Project - Abhiram</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+<head th:replace="~{fragments/head :: head('Home')}"></head>
 
 <body>
-    <header>
-        <nav>
-            <h1>Abhiram's DataCleaner Project</h1>
-            <ul>
-                <li><a href="/static" class="active">Home</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="https://abhiramgowtham.netlify.app">About me!!</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section class="hero">
-            <h2>Upload. Clean. Download.</h2>
-            <p>DataCleaner accepts CSV uploads and reads dataset rows and columns through the Spring Boot upload API.</p>
-            <a class="button-link" href="/services">Upload Data files</a>
-        </section>
+<header th:replace="~{fragments/navbar :: navbar}"></header>
 
-        <section class="features">
-            <div class="card">
-                <h3>CSV Upload</h3>
-                <p>Send a dataset through the browser form to `/api/datasets`.</p>
-            </div>
+<main>
+    <section class="hero">
+        <h2>Upload. Clean. Download.</h2>
+        <p>DataCleaner accepts CSV uploads and reads dataset rows and columns through the Spring Boot upload API.</p>
+        <a class="button-link" href="/services">Upload Data files</a>
+    </section>
 
-            <div class="card">
-                <h3>Backend Parsing</h3>
-                <p>The upload controller passes the file into the CSV parser service.</p>
-            </div>
+    <section class="features">
+        <div class="card">
+            <h3>CSV Upload</h3>
+            <p>Send a dataset through the browser form to `/api/datasets`.</p>
+        </div>
 
-            <div class="card">
-                <h3>Quick Summary</h3>
-                <p>The page shows file name, row count, and column count after upload.</p>
-            </div>
-        </section>
-    </main>
+        <div class="card">
+            <h3>Backend Parsing</h3>
+            <p>The upload controller passes the file into the CSV parser service.</p>
+        </div>
 
-    <footer>
-        <p>&copy; 2026 Abhiram's DataCleaner Project. No rights reserved.</p>
-    </footer>
-    <script src="/js/script.js"></script>
+        <div class="card">
+            <h3>Quick Summary</h3>
+            <p>The page shows file name, row count, and column count after upload.</p>
+        </div>
+    </section>
+</main>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+
 </body>
 
 </html>

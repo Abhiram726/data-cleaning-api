@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<header th:fragment="navbar">
+
+  <nav>
+
+    <h1>Abhiram's DataCleaner Project</h1>
+
+    <ul>
+
+      <li><a th:href="@{/}">Home</a></li>
+
+      <li><a th:href="@{/services}">Services</a></li>
+
+      <li>
+        <a href="https://abhiramgowtham.netlify.app">
+          About Me
+        </a>
+      </li>
+
+      <li><a th:href="@{/contact}">Contact</a></li>
+
+      <li>
+        <button id="themeToggle">
+          🌙
+        </button>
+      </li>
+
+    </ul>
+
+  </nav>
+
+</header>
+
+</body>
+
+</html>

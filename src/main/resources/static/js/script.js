@@ -47,3 +47,24 @@ if (uploadForm) {
     });
 
 }
+
+const themeToggle = document.getElementById("themeToggle");
+
+if (themeToggle) {
+
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        themeToggle.textContent = "☀️";
+    }
+
+    themeToggle.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark-mode");
+
+        const dark = document.body.classList.contains("dark-mode");
+
+        themeToggle.textContent = dark ? "☀️" : "🌙";
+
+        localStorage.setItem("theme", dark ? "dark" : "light");
+    });
+}

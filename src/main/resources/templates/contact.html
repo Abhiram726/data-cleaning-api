@@ -1,25 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - DataCleaner Project - Abhiram</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+<head th:replace="~{fragments/head :: head('Contact')}"></head>
 
 <body>
-    <header>
-        <nav>
-            <h1>Abhiram's DataCleaner Project</h1>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="https://abhiramgowtham.netlify.app">About me!!</a></li>
-                <li><a href="/contact" class="active">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+
+<header th:replace="~{fragments/navbar :: navbar}"></header>
 
     <main>
         <section class="contact">
@@ -44,9 +31,8 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Abhiram's DataCleaner Project. No rights reserved.</p>
-    </footer>
-    <script src="/js/script.js"></script>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+
 </body>
+
 </html>

@@ -1,28 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - File Upload - DataCleaner Project - Abhiram</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+<head th:replace="~{fragments/head :: head('Services')}"></head>
 
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <h1>Abhiram's DataCleaner Project</h1>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/services" class="active">Services</a></li>
-                <li><a href="https://abhiramgowtham.netlify.app">About me!!</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Services -->
+<header th:replace="~{fragments/navbar :: navbar}"></header>
+
+
+<!-- Services -->
     <main>
         <section class="upload-panel">
             <h2>Upload Data</h2>
@@ -38,10 +25,8 @@
 
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Abhiram's DataCleaner Project. No rights reserved.</p>
-    </footer>
-    <script src="/js/script.js"></script>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+
 </body>
 
 </html>
