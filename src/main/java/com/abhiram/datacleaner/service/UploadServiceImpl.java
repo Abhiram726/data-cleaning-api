@@ -2,6 +2,7 @@ package com.abhiram.datacleaner.service;
 
 import com.abhiram.datacleaner.upload.Dataset;
 import com.abhiram.datacleaner.upload.DatasetParser;
+import com.abhiram.datacleaner.upload.ParserFactory;
 import com.abhiram.datacleaner.upload.UploadResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -11,10 +12,10 @@ import java.util.UUID;
 @Service
 public class UploadServiceImpl implements UploadService {
 
-    private final DatasetParser datasetParser;
+    private final ParserFactory parserFactory;
 
-    public UploadServiceImpl(DatasetParser datasetParser) {
-        this.datasetParser = datasetParser;
+    public UploadServiceImpl(ParserFactory parserFactory) {
+        this.parserFactory = parserFactory;
     }
 
     @Override
@@ -34,7 +35,9 @@ public class UploadServiceImpl implements UploadService {
             throw new IllegalArgumentException("Only CSV, Excel and JSON files are supported.");
         }
 
-        Dataset dataset = datasetParser.parse(file);
+        DatasetParser parser = parserFactory.getParser(file);
+
+        Dataset dataset = parser.parse(file);
 
         String datasetId = UUID.randomUUID().toString();
 
