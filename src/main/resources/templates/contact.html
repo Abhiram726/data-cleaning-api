@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - DataCleaner Project - Abhiram</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Abhiram's DataCleaner Project</h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="https://abhiramgowtham.netlify.app">About me!!</a></li>
+                <li><a href="/contact" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact">
+            <form action="https://api.web3forms.com/submit" method="post">
+                <input type="hidden" name="access_key" value="aad55455-eccc-4886-8479-a7aea8edc5ae">
+                <input type="hidden" name="from_name" value="Abhiram - DataCleaner Project">
+
+                <label for="name-field">Your Name</label>
+                <input type="text" name="name" id="name-field" required>
+
+                <label for="email-field">Your Email</label>
+                <input type="email" name="email" id="email-field" required>
+
+                <label for="subject-field">Subject</label>
+                <input type="text" name="subject" id="subject-field" required>
+
+                <label for="message-field">Message</label>
+                <textarea name="message" rows="8" id="message-field" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Abhiram's DataCleaner Project. No rights reserved.</p>
+    </footer>
+    <script src="/js/script.js"></script>
+</body>
+</html>
