@@ -161,22 +161,25 @@ Add screenshots here.
 
 ```
 Home Page
-<img width="1710" height="1022" alt="Screenshot 2026-07-21 at 4 59 43 PM" src="https://github.com/user-attachments/assets/634d588b-4e05-4b9e-9cb6-3ec498ca3406" />
-
-Services Page
-<img width="1710" height="1022" alt="Screenshot 2026-07-21 at 5 00 05 PM" src="https://github.com/user-attachments/assets/89d2679a-912a-4f70-b394-8449e975397e" />
-
-Dark Mode
-
-
-Contact Page
-<img width="1710" height="1022" alt="Screenshot 2026-07-21 at 4 59 59 PM" src="https://github.com/user-attachments/assets/c680450f-4a60-43e6-9d88-1d4a07c90eb8" />
-
-
-Upload Success
-<img width="1710" height="1022" alt="Screenshot 2026-07-21 at 4 59 55 PM" src="https://github.com/user-attachments/assets/ef78c7d3-a160-4756-aca8-5079b4047b96" />
+```
+<img width="1710" height="1022" alt="Screenshot 2026-07-21 at 4 59 43 PM" src="https://github.com/user-attachments/assets/a890ea2f-c176-4e0b-9796-6ea4cd2a2018" />
 
 ```
+Services Page with enabled Dark Mode
+```
+<img width="1710" height="1022" alt="Screenshot 2026-07-21 at 5 00 05 PM" src="https://github.com/user-attachments/assets/89d2679a-912a-4f70-b394-8449e975397e" />
+
+
+```
+Contact Page
+```
+<img width="1710" height="1022" alt="Screenshot 2026-07-21 at 4 59 59 PM" src="https://github.com/user-attachments/assets/c680450f-4a60-43e6-9d88-1d4a07c90eb8" />
+
+```
+Upload Success
+```
+<img width="1710" height="1022" alt="Screenshot 2026-07-21 at 5 03 35 PM" src="https://github.com/user-attachments/assets/3a26f41d-dbf0-4484-a647-ac4427ec67f3" />
+
 
 ---
 
