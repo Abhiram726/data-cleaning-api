@@ -1,13 +1,11 @@
 package com.abhiram.datacleaner.upload;
 
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVRecord;
+import de.siegmar.fastcsv.reader.CsvReader;
+import de.siegmar.fastcsv.reader.NamedCsvRecord;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -19,33 +17,41 @@ public class CsvDatasetParser implements DatasetParser {
     @Override
     public Dataset parse(MultipartFile file) throws Exception {
 
-        Reader reader = new InputStreamReader(file.getInputStream());
+        List<String> headers = null;
+        List<Map<String, Object>> rows = new ArrayList<>();
 
-        CSVParser csvParser = CSVFormat.DEFAULT
-                .builder()
-                .setHeader()
-                .setSkipHeaderRecord(true)
-                .build()
-                .parse(reader);
+        try (CsvReader<NamedCsvRecord> csvReader =
+                     CsvReader.builder()
+                             .ofNamedCsvRecord(new InputStreamReader(file.getInputStream()))) {
 
-        List<String> columns = new ArrayList<>(csvParser.getHeaderMap().keySet());
+            for (NamedCsvRecord record : csvReader) {
 
-        List<Map<String, String>> rows = new ArrayList<>();
+                if (headers == null) {
+                    headers = new ArrayList<>(record.getHeader());
+                }
 
-        for (CSVRecord record : csvParser) {
+                Map<String, Object> row =
+                        new LinkedHashMap<>(record.getFieldsAsMap());
 
-            Map<String, String> row = new LinkedHashMap<>();
-
-            for (String column : columns) {
-                row.put(column, record.get(column));
+                rows.add(row);
             }
-
-            rows.add(row);
         }
+
+        // ===== DEBUG =====
+        System.out.println();
+        System.out.println("Headers:\n");
+        System.out.println(headers);
+
+        System.out.println("\nRows:\n");
+        for (Map<String, Object> row : rows) {
+            System.out.println(row+"\n");
+        }
+        System.out.println();
+        // =================
 
         return new Dataset(
                 file.getOriginalFilename(),
-                columns,
+                headers,
                 rows
         );
     }

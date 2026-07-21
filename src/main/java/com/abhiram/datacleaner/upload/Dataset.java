@@ -7,11 +7,11 @@ public class Dataset {
 
     private String fileName;
     private List<String> columns;
-    private List<Map<String, String>> rows;
+    private List<Map<String, Object>> rows;
 
     public Dataset(String fileName,
                    List<String> columns,
-                   List<Map<String, String>> rows) {
+                   List<Map<String, Object>> rows) {
 
         this.fileName = fileName;
         this.columns = columns;
@@ -26,7 +26,7 @@ public class Dataset {
         return columns;
     }
 
-    public List<Map<String, String>> getRows() {
+    public List<Map<String, Object>> getRows() {
         return rows;
     }
 }
