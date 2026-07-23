@@ -42,13 +42,25 @@ public class UploadServiceImpl implements UploadService {
         Dataset dataset = parser.parse(file);
 
         String datasetId = UUID.randomUUID().toString();
-//
+
 //        DataTypeInferencer dataTypeInferencer = new DataTypeInferencer();
-//        System.out.println(dataTypeInferencer.inferType("25.87654"));
+//        System.out.println(dataTypeInferencer.inferType("25"));
 //        System.out.println(dataTypeInferencer.inferType("25.75"));
 //        System.out.println(dataTypeInferencer.inferType("true"));
 //        System.out.println(dataTypeInferencer.inferType("2026-07-21"));
 //        System.out.println(dataTypeInferencer.inferType("John"));
+//
+//        Object value1 = dataTypeInferencer.convertValue("25");
+//        Object value2 = dataTypeInferencer.convertValue("25.75");
+//        Object value3 = dataTypeInferencer.convertValue("true");
+//        Object value4 = dataTypeInferencer.convertValue("2026-07-21");
+//        Object value5 = dataTypeInferencer.convertValue("John");
+//
+//        System.out.println(value1.getClass().getSimpleName());
+//        System.out.println(value2.getClass().getSimpleName());
+//        System.out.println(value3.getClass().getSimpleName());
+//        System.out.println(value4.getClass().getSimpleName());
+//        System.out.println(value5.getClass().getSimpleName());
 
         return new UploadResponse(
                 datasetId,

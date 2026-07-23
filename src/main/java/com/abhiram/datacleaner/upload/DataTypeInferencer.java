@@ -45,4 +45,27 @@ public class DataTypeInferencer {
 
         return DataType.STRING;
     }
+    public Object convertValue(String value) {
+
+        if (value == null || value.isBlank()) {
+            return value;
+        }
+
+        value = value.trim();
+
+        DataType dataType = inferType(value);
+
+        return switch (dataType) {
+
+            case INTEGER -> Integer.parseInt(value);
+
+            case DOUBLE -> Double.parseDouble(value);
+
+            case BOOLEAN -> Boolean.parseBoolean(value);
+
+            case DATE -> LocalDate.parse(value);
+
+            case STRING -> value;
+        };
+    }
 }
