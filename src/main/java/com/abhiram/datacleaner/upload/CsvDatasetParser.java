@@ -44,7 +44,7 @@ public class CsvDatasetParser implements DatasetParser {
 
         System.out.println("\nRows:\n");
         for (Map<String, Object> row : rows) {
-            System.out.println(row+"\n");
+            System.out.println(row);
         }
         System.out.println();
         // =================

@@ -4,6 +4,8 @@ import com.abhiram.datacleaner.upload.Dataset;
 import com.abhiram.datacleaner.upload.DatasetParser;
 import com.abhiram.datacleaner.upload.ParserFactory;
 import com.abhiram.datacleaner.upload.UploadResponse;
+import com.abhiram.datacleaner.upload.DataTypeInferencer;
+
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -40,6 +42,13 @@ public class UploadServiceImpl implements UploadService {
         Dataset dataset = parser.parse(file);
 
         String datasetId = UUID.randomUUID().toString();
+//
+//        DataTypeInferencer dataTypeInferencer = new DataTypeInferencer();
+//        System.out.println(dataTypeInferencer.inferType("25.87654"));
+//        System.out.println(dataTypeInferencer.inferType("25.75"));
+//        System.out.println(dataTypeInferencer.inferType("true"));
+//        System.out.println(dataTypeInferencer.inferType("2026-07-21"));
+//        System.out.println(dataTypeInferencer.inferType("John"));
 
         return new UploadResponse(
                 datasetId,
